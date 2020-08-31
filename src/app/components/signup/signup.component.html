@@ -1,0 +1,40 @@
+
+
+<div class="body">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6" >
+        <img class="img" src="assets/shopthe.jpg"/>
+    </div>
+        <div class="col-md-6">
+            <div class="login-content">
+    <form #signup="ngForm"> 
+        <h2>SignUp </h2>
+        <br>
+        <!-- here signup indicates template variable it is a object name in ts -->
+    <input type="text" class="form-control" name="sname" #sname="ngModel" [ngModel] placeholder="Name" required><br>
+     <div class="alert alert-danger" *ngIf="sname.invalid && sname.touched">Please Enter your name</div>
+
+    <input type="email" class="form-control" email name="semail" #semail="ngModel" [ngModel] placeholder="Email" required><br>
+    <div class="alert alert-danger" *ngIf="semail.errors?.required && semail.touched">Email is required</div>
+    <div class="alert alert-danger" *ngIf="semail.errors?.email && semail.touched">Please Enter your  valid Email</div>
+
+    <input type="password" class="form-control" minlength=6 name="spassword" #spassword="ngModel" [ngModel] placeholder="Password" required><br>
+    <div class="alert alert-danger" *ngIf="spassword.errors?.required && spassword.touched">please enter your password</div>
+    <div class="alert alert-danger" *ngIf="spassword.errors?.minlength && spassword.touched">password must be atleast 6 letters</div>
+
+    <input type="password" class="form-control"name="sconfirmpassword" #sconfirmpassword="ngModel" [ngModel] placeholder="ConfirmPassword" required><br>
+    <div class="alert alert-danger" *ngIf="sconfirmpassword.errors?.required && sconfirmpassword.touched">please enter your confirm password</div>
+    <div class="alert alert-danger" *ngIf="spassword.value !==sconfirmpassword.value && sconfirmpassword.touched">password and confirm password must be valid</div>
+    <div class =" alert alert-success" *ngIf="sucessMsg">{{sucessMsg}}</div>
+    <button type="button" class="btn btn-primary" [disabled]="!signup.valid" (click)=datacapture(signup)>Submit</button>
+
+    <button type="button" class="btn btn-info" (click)="signup.resetForm()">Reset</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+

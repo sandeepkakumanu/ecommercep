@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "testupload-7a97a": {
+      "hosting": {
+        "ecommerce": [
+          "testupload-7a97a"
+        ]
+      }
+    }
+  }
+}

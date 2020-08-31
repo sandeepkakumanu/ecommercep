@@ -1,0 +1,26 @@
+                  <div class='container mt-3'>
+                    <div class="body">
+                    <div class="row">
+                      <div class="col-md-3 col-sm-3" *ngFor= " let p of Products; index as i">
+                        <div class="card-header bg-light">
+                          <div class="row align-items-center">
+            <img class="card-img-top" src="{{p.ProductPath}}" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" >{{p.Name}}</h5>
+              <h4 class="card-title">{{p.Price | currency}}</h4>
+              <p class="card-text">{{p.Decs}} </p>
+                
+               
+              <button class="btn btn-primary" (click)="addToCart(i)" *ngIf= " add!== i">Add To Cart</button>
+              <div *ngIf = "add === i">
+                <input type="number" class="form-control" placeholder="no of iteams"#amount>
+                <button class= "btn btn-primary"(click)="buy(amount.value)"  >Buy</button>
+              </div>
+            </div>
+          </div>
+         </div>
+         </div>
+         </div>
+         </div>
+<!-- / -->

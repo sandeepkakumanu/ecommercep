@@ -1,0 +1,34 @@
+
+
+<div class="body">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6" >
+        <img class="img" src="assets/Captures.PNG"/>
+    </div>
+        <div class="col-md-6">
+            <div class="login-content">
+    <form #l="ngForm"> 
+        <h2>Login Form </h2>
+        <br>
+       
+    
+    <input type="email" class="form-control" email name="semail" #semail="ngModel" [ngModel] placeholder="Email" required><br>
+    <div class="alert alert-danger" *ngIf="semail.errors?.required && semail.touched">Email is required</div>
+    <div class="alert alert-danger" *ngIf="semail.errors?.email && semail.touched">Please Enter your  valid Email</div>
+
+    <input type="password" class="form-control" minlength=6 name="spassword" #spassword="ngModel" [ngModel] placeholder="Password" required><br>
+    <div class="alert alert-danger" *ngIf="spassword.errors?.required && spassword.touched">please enter your password</div>
+    <div class="alert alert-danger" *ngIf="spassword.errors?.minlength && spassword.touched">password must be atleast 6 letters</div>
+
+    
+    <button type="button" class="btn btn-primary" [disabled]="!l.valid" (click)=login(l) >Submit</button>
+
+  </form>
+</div>
+</div>
+</div>
+
+</div>
+
+
